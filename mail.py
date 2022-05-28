@@ -4,18 +4,15 @@
 import re
 
 #vaild mail pattern
-
 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
-def mail_check(mail):
-
-    valid = False
+def check_mail(mail):
 
     if (re.fullmatch(regex,mail)):
-        valid = True
+        return True
+    return False
 
-    return valid
-mail = input("Please enter your email : ")
+mail = input("Please enter a valid email : ")
 
 if mail_check(mail):
     print("Valid email")
